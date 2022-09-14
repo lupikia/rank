@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS Player;
+
+CREATE TABLE Player(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	username VARCHAR(50) NULL,
+	lastUpdated DATETIME NULL,
+	creationDate DATETIME DEFAULT NOW() NOT NULL,
+	balance DECIMAL(18, 0) NULL);
+
+DROP TABLE IF EXISTS PlayerTransactions;
+ CREATE TABLE PlayerTransactions(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	playerId INT NULL,
+	transactionType text NULL,
+	amount DECIMAL(18, 0) NULL,
+	lastUpdated DATETIME NULL,
+	creationDate DATETIME DEFAULT NOW() NOT NULL );

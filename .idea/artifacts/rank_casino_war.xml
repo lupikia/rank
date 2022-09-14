@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="rank-casino:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>rank-casino</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="user-transaction-api-1.0.0.war">
+      <element id="artifact" artifact-name="rank-casino:war exploded" />
+    </root>
+  </artifact>
+</component>
