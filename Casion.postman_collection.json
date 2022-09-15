@@ -1,0 +1,827 @@
+{
+	"info": {
+		"_postman_id": "a932e83c-b3ec-44e2-8691-6d04edee708d",
+		"name": "Casion",
+		"description": "Rank Casion API\n\nContact Support:\n Email: apiteam@swagger.io",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "player",
+			"item": [
+				{
+					"name": "Return player balance",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/player/:playerId/balance",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"player",
+								":playerId",
+								"balance"
+							],
+							"variable": [
+								{
+									"key": "playerId",
+									"value": "5",
+									"description": "(Required) Player id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/player/:playerId/balance",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"player",
+										":playerId",
+										"balance"
+									],
+									"variable": [
+										{
+											"key": "playerId",
+											"value": "-11675736",
+											"description": "(Required) Player id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"name": "Bad request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/player/:playerId/balance",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"player",
+										":playerId",
+										"balance"
+									],
+									"variable": [
+										{
+											"key": "playerId",
+											"value": "-11675736",
+											"description": "(Required) Player id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"fugiat deserunt\",\n  \"lable\": \"qui dolore cupidatat sed\",\n  \"street_name\": \"aliquip esse\"\n}"
+						},
+						{
+							"name": "Precondition Failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/player/:playerId/balance",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"player",
+										":playerId",
+										"balance"
+									],
+									"variable": [
+										{
+											"key": "playerId",
+											"value": "-11675736",
+											"description": "(Required) Player id"
+										}
+									]
+								}
+							},
+							"status": "Precondition Failed",
+							"code": 412,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Payload Too Large",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/player/:playerId/balance",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"player",
+										":playerId",
+										"balance"
+									],
+									"variable": [
+										{
+											"key": "playerId",
+											"value": "-11675736",
+											"description": "(Required) Player id"
+										}
+									]
+								}
+							},
+							"status": "Request Entity Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Too Many Requests in a short period",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/player/:playerId/balance",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"player",
+										":playerId",
+										"balance"
+									],
+									"variable": [
+										{
+											"key": "playerId",
+											"value": "-11675736",
+											"description": "(Required) Player id"
+										}
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Update player balance",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"amount\": 200,\n    \"transactionType\": \"WAGER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/player/:playerid/balance/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"player",
+								":playerid",
+								"balance",
+								"update"
+							],
+							"variable": [
+								{
+									"key": "playerid",
+									"value": "1",
+									"description": "(Required) Player id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"amount\": null,\n  \"transactionType\": \"/j/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/player/:playerid/balance/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"player",
+										":playerid",
+										"balance",
+										"update"
+									],
+									"variable": [
+										{
+											"key": "playerid",
+											"value": "-11675736",
+											"description": "(Required) Player id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"name": "Bad request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"amount\": null,\n  \"transactionType\": \"/j/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/player/:playerid/balance/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"player",
+										":playerid",
+										"balance",
+										"update"
+									],
+									"variable": [
+										{
+											"key": "playerid",
+											"value": "-11675736",
+											"description": "(Required) Player id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"fugiat deserunt\",\n  \"lable\": \"qui dolore cupidatat sed\",\n  \"street_name\": \"aliquip esse\"\n}"
+						},
+						{
+							"name": "Precondition Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"amount\": null,\n  \"transactionType\": \"/j/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/player/:playerid/balance/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"player",
+										":playerid",
+										"balance",
+										"update"
+									],
+									"variable": [
+										{
+											"key": "playerid",
+											"value": "-11675736",
+											"description": "(Required) Player id"
+										}
+									]
+								}
+							},
+							"status": "Precondition Failed",
+							"code": 412,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Payload Too Large",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"amount\": null,\n  \"transactionType\": \"/j/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/player/:playerid/balance/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"player",
+										":playerid",
+										"balance",
+										"update"
+									],
+									"variable": [
+										{
+											"key": "playerid",
+											"value": "-11675736",
+											"description": "(Required) Player id"
+										}
+									]
+								}
+							},
+							"status": "Request Entity Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Wager greater than current balance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"amount\": null,\n  \"transactionType\": \"/j/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/player/:playerid/balance/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"player",
+										":playerid",
+										"balance",
+										"update"
+									],
+									"variable": [
+										{
+											"key": "playerid",
+											"value": "-11675736",
+											"description": "(Required) Player id"
+										}
+									]
+								}
+							},
+							"status": "I'm a teapot (RFC 2324)",
+							"code": 418,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Too Many Requests in a short period",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"amount\": null,\n  \"transactionType\": \"/j/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/player/:playerid/balance/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"player",
+										":playerid",
+										"balance",
+										"update"
+									],
+									"variable": [
+										{
+											"key": "playerid",
+											"value": "-11675736",
+											"description": "(Required) Player id"
+										}
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Get player transactions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/admin/player/transactions",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"player",
+						"transactions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successful operation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/player/transactions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"player",
+								"transactions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"transactionType\": -49905955,\n  \"transactionId\": -7742851,\n  \"amount\": 93846432.05520463,\n  \"transactions\": {}\n}"
+				},
+				{
+					"name": "Bad request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/player/transactions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"player",
+								"transactions"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"message\": \"fugiat deserunt\",\n  \"lable\": \"qui dolore cupidatat sed\",\n  \"street_name\": \"aliquip esse\"\n}"
+				},
+				{
+					"name": "Precondition Failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/player/transactions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"player",
+								"transactions"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Payload Too Large",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/player/transactions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"player",
+								"transactions"
+							]
+						}
+					},
+					"status": "Request Entity Too Large",
+					"code": 413,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Too Many Requests in a short period",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/player/transactions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"player",
+								"transactions"
+							]
+						}
+					},
+					"status": "Too Many Requests",
+					"code": 429,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080/casino/v1",
+			"type": "default"
+		}
+	]
+}

@@ -1,0 +1,195 @@
+swagger: "2.0"
+info:
+  description: "Rank Casion API"
+  version: "1.0.0"
+  title: "Casion"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:8080"
+basePath: "/casino/v1"
+tags:
+
+  - name: "user"
+    description: "Casino Operations"
+schemes:
+  - "https"
+  - "http"
+paths:
+
+  /player/{playerId}/balance:
+    get:
+      tags:
+        - "user"
+      summary: "Return player balance"
+      operationId: "getBalance"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "path"
+          name: "playerId"
+          type: "integer"
+          description: "Player id"
+          required: true
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "object"
+            items:
+              $ref: "#/definitions/ResponseBalance"
+        "400":
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/ResponseError"
+        "412":
+          description: "Precondition Failed"
+        "413":
+          description: "Payload Too Large"
+        "429":
+          description: "Too Many Requests in a short period"
+
+  /player/{playerid}/balance/update:
+    post:
+      tags:
+        - "user"
+      summary: "Update player balance"
+      operationId: "updateBalance"
+      parameters:
+        - in: "path"
+          name: "playerid"
+          type: "integer"
+          description: "Player id"
+          required: true
+        - in: "body"
+          name: "body"
+          description: "user details"
+          required: true
+          schema:
+            $ref: "#/definitions/RequestUpdateBalance"
+      produces:
+        - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: object
+            items:
+              $ref: "#/definitions/ResponseUpdateBalance"
+        "400":
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/ResponseError"
+        "412":
+          description: "Precondition Failed"
+        "413":
+          description: "Payload Too Large"
+        "418":
+          description: "Wager greater than current balance"
+        "429":
+          description: "Too Many Requests in a short period"
+
+  /admin/player/transactions:
+    post:
+      tags:
+        - "admin"
+      summary: "Get player transactions"
+      operationId: "getTransactions"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "player details"
+          required: true
+          schema:
+            $ref: "#/definitions/RequestUserTransaction"
+      produces:
+        - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ResponseUserTransaction"
+        "400":
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/ResponseError"
+        "412":
+          description: "Precondition Failed"
+        "413":
+          description: "Payload Too Large"
+        "429":
+          description: "Too Many Requests in a short period"
+
+definitions:
+  RequestUpdateBalance:
+    type: "object"
+    properties:
+      amount:
+        $ref: "#/definitions/Regx_int"
+      transactionType:
+        $ref: "#/definitions/Regx_alphabets"
+
+  ResponseUpdateBalance:
+    type: "object"
+    properties:
+      transactionId:
+        type: "integer"
+      balance:
+        type: "number"
+
+  ResponseBalance:
+    type: "object"
+    properties:
+      playerId:
+        type: "integer"
+      balance:
+        type: "integer"
+
+  RequestUserTransaction:
+    type: "object"
+    properties:
+      username:
+        $ref: "#/definitions/Regx_varchar"
+        
+  ResponseUserTransaction:
+    type: "object"
+    properties:
+      transactionType:
+        type: "integer"
+      transactionId:
+        type: "integer"
+      amount:
+        type: "number"
+      transactions:
+        items:
+          type: "array"
+        
+  ResponseError:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+      lable:
+        type: "string"
+      street_name:
+        type: "string"
+
+  Regx_alphabets:
+    type: "string"
+    pattern: "/^[a-zA-Z]$/"
+    example: ""
+
+  Regx_int:
+    type: "integer"
+    pattern: "/^[0-9]$/"
+    example: ""
+
+  Regx_varchar:
+    type: "string"
+    #pattern: /^['".,a-zA-Z0-9]+$/
+    example: ""
